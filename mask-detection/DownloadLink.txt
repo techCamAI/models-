@@ -1,0 +1,6 @@
+https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.weights
+https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.conv.29
+https://github.com/AlexeyAB/darknet.git
+python save_model.py --weights C:\Users\15sta\OneDrive\Documents\CamAi_models\mask_detection\backup\YOLOV4-TINY_last.weights --output ./checkpoints/YOLOV4-TINY-416-tflite --input_size 416 --model yolov4 --tiny --framework tflite
+python convert_tflite.py --weights ./checkpoints/YOLOV4-TINY-416-tflite --output ./checkpoints/YOLOV4-TINY-416.tflite
+python detect.py --weights ./checkpoints/YOLOV4-TINY-416.tflite --size 416 --model yolov4 --image ./data/kite.jpg --framework tflite
